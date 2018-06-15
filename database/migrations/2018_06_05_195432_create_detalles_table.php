@@ -18,6 +18,12 @@ class CreateDetallesTable extends Migration
             $table->string('nombre',120);
             $table->text('descripcion');
             $table->enum('estado',['admin','user']);
+            $table->integer('id_articulo')->unsigned();
+
+            $table->foreign('id_articulo')->references('id')->on('articulos')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
