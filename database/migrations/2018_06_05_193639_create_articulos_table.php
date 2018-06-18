@@ -16,8 +16,12 @@ class CreateArticulosTable extends Migration
         Schema::create('articulos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',50);
-
+            $table->integer('id_categoria')->unsigned();
             $table->timestamps();
+
+            $table->foreign('id_categoria')->references('id')->on('categorias')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

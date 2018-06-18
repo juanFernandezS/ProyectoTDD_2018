@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDetallesTable extends Migration
+class CreateCaracteristicasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateDetallesTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalles', function (Blueprint $table) {
+        Schema::create('caracteristicas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',120);
-            $table->text('descripcion');
-            $table->enum('estado',['admin','user']);
             $table->integer('id_articulo')->unsigned();
 
             $table->foreign('id_articulo')->references('id')->on('articulos')
@@ -35,6 +33,6 @@ class CreateDetallesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalles');
+        Schema::dropIfExists('caracteristicas');
     }
 }

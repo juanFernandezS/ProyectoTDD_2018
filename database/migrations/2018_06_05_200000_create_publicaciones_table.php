@@ -24,7 +24,7 @@ class CreatePublicacionesTable extends Migration
             $table->dateTime('fecha_publicacion');
 
             $table->integer('id_usuario')->unsigned();
-            $table->integer('id_articulo')->unsigned();
+
 
             $table->timestamps();
 
@@ -32,9 +32,7 @@ class CreatePublicacionesTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
-            $table->foreign('id_articulo')->references('id')->on('articulos')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+
         });
     }
 
