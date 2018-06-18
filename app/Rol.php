@@ -10,4 +10,10 @@ class Rol extends Model
 
     protected $fillable = ['rol'];
 
+    //relaciones
+
+    public function users(){
+        return $this->hasMany('App\Users');
+    }
+
 }

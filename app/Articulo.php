@@ -9,4 +9,7 @@ class Articulo extends Model
     protected $table = "articulos";
 
     protected $fillable = ['nombre'];
+
+    //relaciones
+
 }
