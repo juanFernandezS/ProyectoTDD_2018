@@ -21,6 +21,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/jquery-3.3.1') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
 </body>
 </html>

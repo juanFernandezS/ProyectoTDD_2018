@@ -20,14 +20,14 @@
                 <li><a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a></li>
                 <li><a class="nav-link" href="{{ route('register') }}">Registrarse</a></li>
             @else
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         {{ Auth::user()->nombre }} <span class="caret"></span>
                     </a>
 
-                    <ul class="dropdown-menu" role="menu">
+                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
                         <li>
-                            <a href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 Salir
@@ -37,7 +37,7 @@
                                 {{ csrf_field() }}
                             </form>
                         </li>
-                    </ul>
+                    </div>
                 </li>
             @endif
         </ul>
