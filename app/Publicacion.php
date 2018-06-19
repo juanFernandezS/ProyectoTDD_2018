@@ -9,7 +9,7 @@ class Publicacion extends Model
     protected $table = "publicaciones";
 
     protected $fillable = [
-        'titulo', 'comentario', 'estado', 'imagen', 'pecio', 'cantidad', 'fecha_publicacion', 'id_usuario', 'id_articulo'
+        'titulo', 'comentario', 'estado', 'imagen', 'precio', 'cantidad', 'fecha_publicacion', 'id_usuario', 'id_articulo'
     ];
 
     //relaciones
@@ -18,7 +18,11 @@ class Publicacion extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function articulo(){
-        return $this->belongsTo('App\Articulo');
+    public function detallesOpcionales(){
+        $this->hasMany('App\DetalleOpcional');
+    }
+
+    public function detallesProducto(){
+        $this->hasMany('App\DetalleProducto');
     }
 }

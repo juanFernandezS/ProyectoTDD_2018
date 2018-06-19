@@ -12,4 +12,11 @@ class Articulo extends Model
 
     //relaciones
 
+    public function categoria(){
+        $this->belongsTo('App\Categoria');
+    }
+
+    public function caracteristicas(){
+        $this->hasMany('App\Caracteristica');
+    }
 }
