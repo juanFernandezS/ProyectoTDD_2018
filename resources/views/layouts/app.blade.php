@@ -22,6 +22,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/bootstrap.js') }}"></script>
+    <script src="{{ asset('plugins/jquery/jquery-3.3.1.js') }}"></script>
 </body>
 </html>
