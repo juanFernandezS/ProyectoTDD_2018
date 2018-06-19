@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="mi-carousel" class="carousel slide">
+    <div class="carousel slide">
 
         <!-- Contenedor de los Slide -->
         <div class="carousel-inner">
