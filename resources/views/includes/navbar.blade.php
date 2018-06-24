@@ -15,7 +15,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mantenedores</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Categorias</a>
+                    <a class="dropdown-item" href="{{ url('mantenedores/categorias') }}">Categorias</a>
                 </div>
             </li>
             @endif

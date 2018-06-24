@@ -18,3 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'], function (){
+
+    //rutas de mantenedores
+    Route::prefix('mantenedores')->group(function (){
+
+        Route::resource('categorias','CategoriasController');
+
+    });
+    //aqui para abajo van las rutas externas a los cruds
+});
