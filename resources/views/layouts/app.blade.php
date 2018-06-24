@@ -8,13 +8,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('', 'Proyecto-tdd') }}</title>
+    <title>{{ config('app.name', '') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div>
         @include('includes.navbar')
 
         @yield('content')
