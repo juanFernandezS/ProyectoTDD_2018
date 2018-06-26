@@ -11,10 +11,10 @@ class DetalleProducto extends Model
     protected $fillable = ['descripcion'];
 
     public function publicacion(){
-        $this->belongsTo('App\publicacion');
+        return $this->belongsTo('App\publicacion');
     }
 
     public function caracteristica(){
-        $this->belongsTo('App\Caracteristica');
+       return $this->belongsTo('App\Caracteristica');
     }
 }

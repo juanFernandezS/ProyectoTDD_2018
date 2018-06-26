@@ -11,6 +11,6 @@ class DetalleOpcional extends Model
     protected $fillable = ['nombre','descripcion'];
 
     public function publicacion(){
-        $this->belongsTo('App\Publicacion');
+        return $this->belongsTo('App\Publicacion');
     }
 }

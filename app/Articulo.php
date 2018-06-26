@@ -8,15 +8,15 @@ class Articulo extends Model
 {
     protected $table = "articulos";
 
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre','id_categoria'];
 
     //relaciones
 
     public function categoria(){
-        $this->belongsTo('App\Categoria');
+        return $this->belongsTo('App\Categoria','id_categoria');
     }
 
     public function caracteristicas(){
-        $this->hasMany('App\Caracteristica');
+        return $this->hasMany('App\Caracteristica');
     }
 }

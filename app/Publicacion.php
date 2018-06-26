@@ -15,14 +15,14 @@ class Publicacion extends Model
     //relaciones
 
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','id_usuario');
     }
 
     public function detallesOpcionales(){
-        $this->hasMany('App\DetalleOpcional');
+       return $this->hasMany('App\DetalleOpcional');
     }
 
     public function detallesProducto(){
-        $this->hasMany('App\DetalleProducto');
+       return $this->hasMany('App\DetalleProducto');
     }
 }

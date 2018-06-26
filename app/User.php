@@ -30,7 +30,7 @@ class User extends Authenticatable
     //relaciones
 
     public function rol(){
-        return $this->belongsTo('App\Rol');
+        return $this->belongsTo('App\Rol','id_rol');
     }
 
     public function publicaciones(){

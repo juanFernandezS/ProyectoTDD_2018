@@ -11,10 +11,10 @@ class Caracteristica extends Model
     protected $fillable = ['nombre'];
 
     public function articulo(){
-        $this->belongsTo('App\Articulo');
+        return $this->belongsTo('App\Articulo','id_articulo');
     }
 
     public function detalleProducto(){
-        $this->hasMany('App\DetalleProducto');
+       return $this->hasMany('App\DetalleProducto');
     }
 }
