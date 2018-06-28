@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('articulos','Admin\ArticuloController');
+Route::resource('caracteristicas','Admin\CaracteristicaController');

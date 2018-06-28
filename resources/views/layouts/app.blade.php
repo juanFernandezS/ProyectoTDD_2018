@@ -17,6 +17,18 @@
     <div>
         @include('includes.navbar')
 
+        @if(session('mensaje'))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="alert alert-danger">
+                            {{ session('mensaje') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+
         @yield('content')
     </div>
 

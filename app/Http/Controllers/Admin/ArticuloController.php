@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Caracteristica;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Articulo;
+use App\Categoria;
+use DB;
+use App\Http\Requests\ArticuloStoreRequest;
+use App\Http\Requests\ArticuloUpdateRequest;
 
 class ArticuloController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $articulos = Articulo::orderBy('id','DESC')->paginate();
@@ -20,76 +21,51 @@ class ArticuloController extends Controller
         return view('admin.articulos.index',compact('articulos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        return view('admin.articulos.create');
+        $categorias = Categoria::orderBy('id','ASC')->pluck('nombre','id');
+        //fdd($categorias);
+        return view('admin.articulos.create',compact('categorias'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store(ArticuloStoreRequest $request)
     {
-        $article = Articulo::create($request->all());
-        return redirect()->route('articulos.edit',$article->id)->with('mensaje','articulo creado con exito');
+        $articulo = Articulo::create($request->all());
+        return redirect()->route('articulos.index',$articulo->id)->with('mensaje','articulo creado con exito');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        $article = Articulo::find($id);
-        return view('admin.articulos.show',compact('article'));
+        $articulo = Articulo::find($id);
+        $caracteristicas = Caracteristica::where('id_articulo',$id)->get();
+
+        return view('admin.articulos.show',compact('articulo','caracteristicas'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        $article = Articulo::find($id);
-        return view('admin.articulos.edit',compact('article'));
+        $categorias = Categoria::orderBy('id','ASC')->pluck('nombre','id');
+        $articulo = Articulo::find($id);
+        return view('admin.articulos.edit',compact('articulo','categorias'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(ArticuloUpdateRequest $request, $id)
     {
-        $article = Articulo::find($id);
+        $articulo = Articulo::find($id);
 
-        $article->fill($request->all())->save();
-        return redirect()->route('articulos.edit',$article->id)->with('mensaje','articulo actualizado con exito');
+        $articulo->fill($request->all())->save();
+        return redirect()->route('articulos.index',$articulo->id)->with('mensaje','articulo actualizado con exito');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        $article = Articulo::find($id)->delete();
+        $articulo = Articulo::find($id)->delete();
         return back()->with('mensaje','eliminado articulo');
     }
 }
