@@ -14,10 +14,14 @@
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div>
-        @include('includes.navbar')
-
-        @yield('content')
+    @include('includes.navbar')
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <br>@yield('content')
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

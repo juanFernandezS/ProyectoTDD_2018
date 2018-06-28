@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'Inicio')
+@section('titulo', 'Bienvenido')
 
 @section('content')
     <div class="carousel slide">

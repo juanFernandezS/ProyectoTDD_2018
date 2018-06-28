@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categoria;
 
 class CategoriasController extends Controller
 {
@@ -13,7 +14,8 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        return view('mantenedores.categorias.index');
+        $categorias = Categoria::paginate(5);
+        return view('mantenedores.categorias.index')->with('categorias', $categorias);
     }
 
     /**
@@ -34,7 +36,9 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categoria =  new Categoria($request->all());
+        $categoria->save();
+        return redirect()->route('categoria.index');
     }
 
     /**
