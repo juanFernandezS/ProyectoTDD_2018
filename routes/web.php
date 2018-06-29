@@ -13,11 +13,23 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('articulos','Admin\ArticuloController');
-Route::resource('caracteristicas','Admin\CaracteristicaController');
+Route::group(['middleware' => 'auth'], function (){
+
+    //rutas de mantenedores
+    Route::prefix('mantenedores')->group(function (){
+
+        Route::resource('categorias','CategoriasController');
+
+        Route::resource('articulos','ArticuloController');
+
+        Route::resource('caracteristicas','CaracteristicaController');
+
+    });
+    //aqui para abajo van las rutas externas a los cruds
+});
