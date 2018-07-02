@@ -20,6 +20,9 @@
         <div class="panel panel-primary">
             <div class="panel-heading"></div>
             <div class="panel-body">
+                <!--se usa para mostrar mensajes flash enviados desde controlador-->
+                @include('flash::message')
+
                 @if(session('mensaje'))
                     <div class="alert alert-danger">
                         {{ session('mensaje') }}
@@ -34,6 +37,8 @@
 
     <script src="{{ asset('plugins/jquery/jquery-3.3.1.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/bootstrap.js') }}"></script>
+
+        @yield('scripts')
     </div>
 </body>
 </html>

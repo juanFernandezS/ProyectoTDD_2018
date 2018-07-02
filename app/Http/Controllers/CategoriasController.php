@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+use Laracasts\Flash\Flash;
 
 class CategoriasController extends Controller
 {
@@ -14,7 +15,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::paginate(5);
+        $categorias = Categoria::paginate(3);
         return view('mantenedores.categorias.index')->with('categorias', $categorias);
     }
 
@@ -36,9 +37,11 @@ class CategoriasController extends Controller
      */
     public function store(Request $request)
     {
-        $categoria =  new Categoria($request->all());
-        $categoria->save();
-        return redirect()->route('categoria.index');
+        $categoria = Categoria::create($request->all());
+
+        Flash::success("Se a registrado la categoria: ". $categoria->nombre ." con exito")->important();
+
+        return redirect()->route('categorias.index');
     }
 
     /**
@@ -70,9 +73,17 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        //dd($request->all());
+
+        $categoria = Categoria::findOrFail($request->id);
+
+        $categoria->update($request->all());
+
+        Flash::success("Se a actuaizado la categoria: ". $categoria->nombre ." con exito")->important();
+
+        return redirect()->route('categorias.index');
     }
 
     /**
@@ -81,8 +92,15 @@ class CategoriasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $categoria = Categoria::findOrFail($request->id);
+
+        $categoria->delete();
+
+        Flash::success("La categoria: ". $categoria->nombre ." se ha eliminado con exito")->important();
+
+        return redirect()->route('categorias.index');
+
     }
 }

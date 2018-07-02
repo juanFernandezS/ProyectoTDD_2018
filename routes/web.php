@@ -26,9 +26,9 @@ Route::group(['middleware' => 'auth'], function (){
 
         Route::resource('categorias','CategoriasController');
 
-        Route::resource('articulos','ArticuloController');
+        Route::resource('articulos','Admin\ArticuloController');
 
-        Route::resource('caracteristicas','CaracteristicaController');
+        Route::resource('caracteristicas','Admin\CaracteristicaController');
 
     });
     //aqui para abajo van las rutas externas a los cruds

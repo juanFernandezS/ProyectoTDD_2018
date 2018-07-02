@@ -15,6 +15,8 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mantenedores</a>
                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ route('caracteristicas.index') }}">Caracteristicas</a>
+                    <a class="dropdown-item" href="{{ route('articulos.index') }}">Articulos</a>
                     <a class="dropdown-item" href="{{ route('categorias.index') }}">Categorias</a>
                 </div>
             </li>
