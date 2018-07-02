@@ -15,7 +15,6 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mantenedores</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ route('caracteristicas.index') }}">Caracteristicas</a>
                     <a class="dropdown-item" href="{{ route('articulos.index') }}">Articulos</a>
                     <a class="dropdown-item" href="{{ route('categorias.index') }}">Categorias</a>
                 </div>
@@ -27,7 +26,7 @@
         <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->
             @if (Auth::guest())
-                <li><a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a></li>
+                <li><a class="nav-link" href="{{ route('login') }}"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
                 <li><a class="nav-link" href="{{ route('register') }}">Registrarse</a></li>
             @else
                 <li class="nav-item dropdown">
@@ -39,12 +38,13 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                Salir
+                                Salir <i class="fa fa-sign-out"></i>
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
+
                     </div>
                 </li>
             @endif

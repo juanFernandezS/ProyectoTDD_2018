@@ -44,7 +44,7 @@
             <div class="form-group">
                 <div>
                     <button type="submit" class="btn btn-primary">
-                        Entrar
+                        <i class="fa fa-sign-in"></i> Entrar
                     </button>
                     <a class="btn btn-link" href="{{ route('password.request') }}">
                         olvidaste tu contraseña?

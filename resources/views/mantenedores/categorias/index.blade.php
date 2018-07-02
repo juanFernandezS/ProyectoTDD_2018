@@ -21,17 +21,17 @@
                 <th scope="row">{{ $categoria->id }}</th>
                 <td>{{ $categoria->nombre }}</td>
                 <td>
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit" data-nombre="{{ $categoria->nombre }}" data-id="{{ $categoria->id }}"></button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete" data-id="{{ $categoria->id }}"></button>
+                    <a type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-edit" data-nombre="{{ $categoria->nombre }}" data-id="{{ $categoria->id }}"><i class="fa fa-pencil" style="font-size:24px"></i></a>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-delete" data-id="{{ $categoria->id }}"><i class="fa fa-times-circle-o" style="font-size:24px"></i></button>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    {!! $categorias->render() !!}
+    {{ $categorias->render() }}
 
     <!-- modal crear -->
-    <div class="modal" id="modal-create">
+    <div class="modal fade modal-slide-in-right" role="dialog" tabindex="-1" id="modal-create">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -58,7 +58,7 @@
     </div>
 
     <!-- modal editar -->
-    <div class="modal" id="modal-edit">
+    <div class="modal fade modal-slide-in-right" role="dialog" tabindex="-1" id="modal-edit">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -87,7 +87,7 @@
     </div>
 
     <!-- modal eliminar -->
-    <div class="modal" id="modal-delete">
+    <div class="modal fade modal-slide-in-right" role="dialog" tabindex="-1" id="modal-delete">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

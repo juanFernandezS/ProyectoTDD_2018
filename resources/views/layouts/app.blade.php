@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div>
@@ -37,7 +38,6 @@
 
     <script src="{{ asset('plugins/jquery/jquery-3.3.1.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/bootstrap.js') }}"></script>
-
         @yield('scripts')
     </div>
 </body>
