@@ -6,30 +6,24 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block img-fluid" src="http://lorempixel.com/1920/1080" alt="First slide">
+            <img class="d-block img-fluid" src="{{ asset('img/img_1.jpg') }}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>imagen</h5>
-                <p> Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Suspendisse cursus mauris sit amet tellus imperdiet,
-                    luctus ultricies sem rhoncus. Nam quis aliquet lorem, sagittis faucibus velit.</p>
+                <h5>Simple y donde quieras</h5>
+                <p> Nueva pagina de venta! especializada en articulos electronicos y computacionales.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block img-fluid" src="http://lorempixel.com/1920/1080" alt="Second slide">
+            <img class="d-block img-fluid" src="{{ asset('img/img_1.jpg') }}" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>imagen</h5>
-                <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Suspendisse cursus mauris sit amet tellus imperdiet,
-                    luctus ultricies sem rhoncus. Nam quis aliquet lorem, sagittis faucibus velit.</p>
+                <h5>Un servicio 24/7</h5>
+                <p>Todo lo que buscas lo encuentras aquí.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block img-fluid" src="http://lorempixel.com/1920/1080" alt="Third slide">
+            <img class="d-block img-fluid" src="{{ asset('img/img_1.jpg') }}" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>imagen</h5>
-                <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Suspendisse cursus mauris sit amet tellus imperdiet,
-                    luctus ultricies sem rhoncus. Nam quis aliquet lorem, sagittis faucibus velit.</p>
+                <h5>Todo en un solo lugar</h5>
+                <p>....</p>
             </div>
         </div>
     </div>

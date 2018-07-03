@@ -17,16 +17,8 @@
 <body>
     <div>
     @include('includes.navbar')
-        @if (Auth::check())
-        @include('blog.carousel')
-        @endif
     <div class="container">
         <div class="row">
-            <div class="col-3">
-                @if (Auth::check())
-                    @include('blog.navCategorias')
-                    @endif
-            </div>
             <div class="col-9">
                 <div class="panel panel-primary">
                     <div class="panel-heading"></div>
