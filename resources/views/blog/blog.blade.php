@@ -1,9 +1,12 @@
-<div class="container" >
+@section('barraLateral')
+    @include('includes.navCategorias')
+    @endsection
 
-    <div class="col-3">
-        @include('blog.navCategorias')
-    </div>
+
+@section('content')
+
         @include('blog.ultimasPublicaciones')
 
         @include('blog.masVisitadas')
-</div>
+
+@endsection

@@ -16,31 +16,43 @@
 </head>
 <body>
     <div>
+
     @include('includes.navbar')
+
     <div class="container">
         <div class="row">
-            <div class="col-9">
-                <div class="panel panel-primary">
-                    <div class="panel-heading"></div>
-                    <div class="panel-body">
-                        <!--se usa para mostrar mensajes flash enviados desde controlador-->
-                        @include('flash::message')
 
-                        @if(session('mensaje'))
-                            <div class="alert alert-danger">
-                                {{ session('mensaje') }}
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-3">
+                        @yield('barraLateral')
+                    </div>
+                    <div class="col-9">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"></div>
+                            <div class="panel-body">
+                                <!--se usa para mostrar mensajes flash enviados desde controlador-->
+                                @include('flash::message')
+
+                                @if(session('mensaje'))
+                                    <div class="alert alert-danger">
+                                        {{ session('mensaje') }}
+                                    </div>
+                                @endif
+                                <br>
+
+                                @yield('content')
+
                             </div>
-                        @endif
-                        <br>
-
-                        @yield('content')
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
-        @if (Auth::check())
-                @include('blog.footer')
-         @endif
+
+                @include('includes.footer')
+
 
     </div>
 
