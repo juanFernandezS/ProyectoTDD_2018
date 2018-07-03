@@ -2,7 +2,7 @@
     <div class="panel-default">
         <div class="panel-heading">
             <h4>Publicaciones mas visitadas</h4>
-            <a href="#" class="btn btn-sm btn-info pull-right"> Ver Todas</a>
+            <a href="{{ route('publicaciones') }}" class="btn btn-sm btn-info pull-right"> Ver Todas</a>
         </div>
         <div class="panel-body">
 

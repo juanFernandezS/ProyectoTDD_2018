@@ -15,31 +15,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div>
+<div>
 
     @include('includes.navbar')
 
     <div class="container">
         <div class="row">
+            <div class="col-3">
+                @include('includes.navCategorias')
+            </div>
+            <div class="col-9">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <!--se usa para mostrar mensajes flash enviados desde controlador-->
 
-            <div class="col-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading"></div>
-                            <div class="panel-body">
-                                <!--se usa para mostrar mensajes flash enviados desde controlador-->
-                                @include('flash::message')
+                        <br>
 
-                                @if(session('mensaje'))
-                                    <div class="alert alert-danger">
-                                        {{ session('mensaje') }}
-                                    </div>
-                                @endif
-                                <br>
+                        @yield('content')
 
-                                @yield('content')
-
-                            </div>
-                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -50,8 +46,8 @@
 
     <script src="{{ asset('plugins/jquery/jquery-3.3.1.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/bootstrap.js') }}"></script>
-        @yield('scripts')
-    </div>
+    @yield('scripts')
+</div>
 
 </body>
 </html>

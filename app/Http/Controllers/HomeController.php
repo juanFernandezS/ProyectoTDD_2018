@@ -25,7 +25,7 @@ class HomeController extends Controller
     }
 
     public function publicaciones(){
-        $publicaciones = Publicacion::orderBy('id','DESC')->paginate(4);
+        $publicaciones = Publicacion::orderBy('id','DESC')->paginate(3);
         $categorias = Categoria::orderBy('id','DESC')->get();
         return view('blog.publicaciones',compact('publicaciones','categorias'));
     }
