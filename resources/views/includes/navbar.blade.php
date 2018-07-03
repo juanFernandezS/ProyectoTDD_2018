@@ -19,6 +19,9 @@
                     <a class="dropdown-item" href="{{ route('categorias.index') }}">Categorias</a>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('publicaciones.index') }}">Mis Publicaciones <span class="sr-only"></span></a>
+            </li>
             @endif
         </ul>
 

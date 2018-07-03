@@ -25,7 +25,7 @@ class ArticuloController extends Controller
     public function create()
     {
         $categorias = Categoria::orderBy('id','ASC')->pluck('nombre','id');
-        //fdd($categorias);
+        //dd($categorias);
         return view('admin.articulos.create',compact('categorias'));
     }
 
