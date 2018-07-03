@@ -1,7 +1,5 @@
-@extends('layouts.app')
-@section('barraLateral')
-    @include('includes.navCategorias')
-@endsection
+@extends('layouts.plantillaBlog')
+
 
 @section('content')
 
