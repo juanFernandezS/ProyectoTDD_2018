@@ -17,21 +17,39 @@
 <body>
     <div>
     @include('includes.navbar')
+        @if (Auth::check())
+        @include('blog.carousel')
+        @endif
     <div class="container">
-        <div class="panel panel-primary">
-            <div class="panel-heading"></div>
-            <div class="panel-body">
-                <!--se usa para mostrar mensajes flash enviados desde controlador-->
-                @include('flash::message')
+        <div class="row">
+            <div class="col-3">
+                @if (Auth::check())
+                    @include('blog.navCategorias')
+                    @endif
+            </div>
+            <div class="col-9">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <!--se usa para mostrar mensajes flash enviados desde controlador-->
+                        @include('flash::message')
 
-                @if(session('mensaje'))
-                    <div class="alert alert-danger">
-                        {{ session('mensaje') }}
+                        @if(session('mensaje'))
+                            <div class="alert alert-danger">
+                                {{ session('mensaje') }}
+                            </div>
+                        @endif
+                        <br>
+
+                        @yield('content')
                     </div>
-                @endif
-                <br>@yield('content')
+                </div>
             </div>
         </div>
+        @if (Auth::check())
+                @include('blog.footer')
+         @endif
+
     </div>
 
     <!-- Scripts -->
@@ -40,5 +58,6 @@
     <script src="{{ asset('plugins/bootstrap/bootstrap.js') }}"></script>
         @yield('scripts')
     </div>
+
 </body>
 </html>

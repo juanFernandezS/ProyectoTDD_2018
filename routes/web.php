@@ -32,4 +32,7 @@ Route::group(['middleware' => 'auth'], function (){
 
     });
     //aqui para abajo van las rutas externas a los cruds
+
+    Route::get('/detalle/{id}','HomeController@detalle')->name('detalle');
+    Route::get('/publicaciones','HomeController@publicaciones')->name('publicaciones');
 });

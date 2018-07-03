@@ -20,5 +20,17 @@ class CategoriaSeeder extends Seeder
             'nombre' => 'Almacenamiento',
 
         ]);
+        DB::table('categorias')->insert([
+            'nombre' => 'Monitores',
+
+        ]);
+        DB::table('categorias')->insert([
+            'nombre' => 'Impresoras',
+
+        ]);
+        DB::table('categorias')->insert([
+            'nombre' => 'Robotica',
+
+        ]);
     }
 }
