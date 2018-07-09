@@ -5,5 +5,19 @@
 @section('content')
 
     @include('blog.blog')
+    <!--include('includes.buttonFloat')-->
+
+@endsection
+
+@section('scripts')
+
+    <script>
+        $('.botonF1').hover(function(){
+            $('.btn-float').addClass('animacionVer');
+        })
+        $('.contenedor').mouseleave(function(){
+            $('.btn-float').removeClass('animacionVer');
+        })
+    </script>
 
 @endsection
