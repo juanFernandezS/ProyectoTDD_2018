@@ -4,15 +4,15 @@
 
 @section('content')
 
-    @include('blog.blog')
-    <!--include('includes.buttonFloat')-->
+    <!--include('blog.blog')-->
+    @include('includes.buttonFloat')
 
 @endsection
 
 @section('scripts')
 
     <script>
-        $('.botonF1').hover(function(){
+        $('.botonPrincipal').hover(function(){
             $('.btn-float').addClass('animacionVer');
         })
         $('.contenedor').mouseleave(function(){
