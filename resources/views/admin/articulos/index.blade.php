@@ -5,8 +5,8 @@
 
     <div class="container">
        <div class="row">
-           <div class="col-md-8">
-               <H1>Lista De Articulos</H1>
+           <div class="col-md-8 p-3 mb-2 bg-white text-dark"">
+               <H2>Lista De Articulos</H2>
                 <a href="{{ route('articulos.create') }}" class="btn btn-sm btn-primary ">Crear</a>
                <div class="panel panel-default">
                    <table class="table table-striped table-hover">

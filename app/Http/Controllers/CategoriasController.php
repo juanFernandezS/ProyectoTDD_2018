@@ -15,7 +15,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::paginate(3);
+        $categorias = Categoria::paginate(7);
         return view('mantenedores.categorias.index')->with('categorias', $categorias);
     }
 

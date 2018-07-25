@@ -3,32 +3,40 @@
 @section('titulo', 'Categorias')
 
 @section('content')
-    <h4>Lista de Categorias</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 p-3 mb-2 bg-white text-dark"">
+            <H2>Lista De Categorias</H2>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">Crear</button><hr>
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create">Registrar nueva categoria</button><hr>
+            <div class="panel panel-default">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre Categoria</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
 
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nombre Categoria</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach( $categorias as $categoria )
-            <tr>
-                <th scope="row">{{ $categoria->id }}</th>
-                <td>{{ $categoria->nombre }}</td>
-                <td>
-                    <a type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-edit" data-nombre="{{ $categoria->nombre }}" data-id="{{ $categoria->id }}"><i class="fa fa-pencil" style="font-size:24px"></i></a>
-                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-delete" data-id="{{ $categoria->id }}"><i class="fa fa-times-circle-o" style="font-size:24px"></i></button>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-    {{ $categorias->render() }}
+                    <tbody>
+                    @foreach( $categorias as $categoria )
+                        <tr>
+                            <th scope="row">{{ $categoria->id }}</th>
+                            <td>{{ $categoria->nombre }}</td>
+                            <td>
+                                <a type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-edit" data-nombre="{{ $categoria->nombre }}" data-id="{{ $categoria->id }}"><i class="fa fa-pencil" style="font-size:24px"></i></a>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-delete" data-id="{{ $categoria->id }}"><i class="fa fa-times-circle-o" style="font-size:24px"></i></button>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                {{ $categorias->render() }}
+            </div>
+        </div>
+    </div>
+    </div>
 
     <!-- modal crear -->
     <div class="modal fade modal-slide-in-right" role="dialog" tabindex="-1" id="modal-create">

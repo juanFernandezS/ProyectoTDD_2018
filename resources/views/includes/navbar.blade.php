@@ -22,6 +22,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('publicaciones.index') }}">Mis Publicaciones <span class="sr-only"></span></a>
             </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('intereses',Auth::user()) }}">Mis chats <span class="sr-only"></span></a>
+                </li>
             @endif
         </ul>
 

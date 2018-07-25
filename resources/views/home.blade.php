@@ -4,8 +4,8 @@
 
 @section('content')
 
-    <!--include('blog.blog')-->
-    @include('includes.buttonFloat')
+    @include('blog.blog')
+   <!-- @include('includes.buttonFloat')-->
 
 @endsection
 

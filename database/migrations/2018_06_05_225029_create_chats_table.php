@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComprasTable extends Migration
+class CreateChatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateComprasTable extends Migration
      */
     public function up()
     {
-        Schema::create('compras', function (Blueprint $table) {
+        Schema::create('chats', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('fecha');
-            $table->integer('id_estado')->unsigned();
-            $table->decimal('precio_total',9,2);
+            $table->text('mensaje');
+            $table->integer('id_compra');
+            $table->integer('origen')->nullable();//para saber quien manda el mensaje
             $table->timestamps();
 
-            $table->foreign('id_estado')->references('id')->on('estados')
+            $table->foreign('id_compra')->references('id')->on('compras')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -33,6 +33,6 @@ class CreateComprasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compras');
+        Schema::dropIfExists('chats');
     }
 }

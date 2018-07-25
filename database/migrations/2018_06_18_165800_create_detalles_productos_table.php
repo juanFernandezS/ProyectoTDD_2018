@@ -17,6 +17,7 @@ class CreateDetallesProductosTable extends Migration
             $table->increments('id');
             $table->integer('id_publicacion')->unsigned();
             $table->integer('id_caracteristica')->unsigned();
+            $table->text('descripcion');
 
             $table->timestamps();
 

@@ -19,4 +19,8 @@ class Articulo extends Model
     public function caracteristicas(){
         return $this->hasMany('App\Caracteristica');
     }
+
+    public function publicaciones(){
+        return $this->hasMany('App\Publicacion','id');
+    }
 }

@@ -13,7 +13,7 @@ class CreateCompraPublicacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('compra_publicaciones', function (Blueprint $table) {
+      /*  Schema::create('compra_publicaciones', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_publicacion')->unsigned();
             $table->integer('id_compra')->unsigned();
@@ -27,6 +27,7 @@ class CreateCompraPublicacionesTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
+      */
     }
 
     /**

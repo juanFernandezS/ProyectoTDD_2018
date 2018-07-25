@@ -13,11 +13,11 @@ class CreateEstadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function (Blueprint $table) {
-            $table->increments('id');
-            $table->enum('estado',['vendida','pendiente','cancelada']);
-            $table->timestamps();
-        });
+//        Schema::create('estados', function (Blueprint $table) {
+//            $table->increments('id');
+//            $table->enum('estado',['vendida','pendiente','cancelada']);
+//            $table->timestamps();
+//        });
     }
 
     /**

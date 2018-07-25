@@ -16,7 +16,7 @@ class ArticuloController extends Controller
 
     public function index()
     {
-        $articulos = Articulo::orderBy('id','DESC')->paginate();
+        $articulos = Articulo::orderBy('id','DESC')->paginate(7);
         //dd($articulos);
         return view('admin.articulos.index',compact('articulos'));
     }
@@ -67,6 +67,7 @@ class ArticuloController extends Controller
     {
         $articulo = Articulo::find($id)->delete();
         return back()->with('mensaje','eliminado articulo');
+
     }
 }
 

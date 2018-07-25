@@ -16,7 +16,8 @@ class CreateDetallesOpcionalesTable extends Migration
         Schema::create('detalles_opcionales', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_publicacion')->unsigned();
-
+            $table->text('nombre');
+            $table->text('descripcion');
 
             $table->timestamps();
 

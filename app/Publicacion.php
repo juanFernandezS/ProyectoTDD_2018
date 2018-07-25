@@ -18,6 +18,9 @@ class Publicacion extends Model
         return $this->belongsTo('App\User','id_usuario');
     }
 
+    public function compras(){
+        return $this->hasMany('App\Compra','id_publicacion');
+    }
     public function detallesOpcionales(){
        return $this->hasMany('App\DetalleOpcional');
     }
@@ -25,4 +28,9 @@ class Publicacion extends Model
     public function detallesProducto(){
        return $this->hasMany('App\DetalleProducto');
     }
+
+    public function articulo(){
+        return $this->belongsTo('App\Articulo','id_articulo');
+    }
+
 }
