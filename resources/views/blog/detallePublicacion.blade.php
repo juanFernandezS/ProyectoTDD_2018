@@ -12,7 +12,7 @@
                <p>Creado por : {{ $publicacion->user->nombre  }} {{ $publicacion->user->apellidos  }}</p>
 
                <p><strong>Cantidad de Articulos</strong>:{{$publicacion->cantidad}}</p>
-               <p><strong>Precio por articulo</strong>:{{$publicacion->precio}}</p>
+               <p><strong>Precio por articulo</strong>:$ {{number_format($publicacion->precio)}}</p>
 
 
                <div>

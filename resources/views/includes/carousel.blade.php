@@ -6,10 +6,10 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="{{ asset('img/carousel/img_1.jpg') }}" alt="First slide">
+            <img class="d-block w-100" src="{{ asset('img/carousel/img_4.jpg') }}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <h4 class="text-primary text-">Simple y donde quieras</h4>
-                <p> Nueva pagina de venta! especializada en articulos electronicos y computacionales.</p>
+                <p class="font-carousel"> Nueva pagina de venta! especializada en articulos electronicos y computacionales.</p>
             </div>
         </div>
         <div class="carousel-item">
@@ -23,7 +23,7 @@
             <img class="d-block w-100" src="{{ asset('img/carousel/img_3.jpg') }}" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
                 <h4 class="text-primary">Un servicio 24/7</h4>
-                <p>Todo lo que buscas lo encuentras aquí.</p>
+                <p class="font-carousel">Todo lo que buscas lo encuentras aquí.</p>
             </div>
         </div>
     </div>
