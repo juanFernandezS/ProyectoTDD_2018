@@ -37,6 +37,7 @@ class ArticuloController extends Controller
     }
 
 
+
     public function show($id)
     {
         $articulo = Articulo::find($id);

@@ -36,6 +36,8 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/detalle/{id}','HomeController@detalle')->name('detalle');
     Route::get('/publicaciones/lista','HomeController@publicaciones')->name('publicaciones');
 
+    Route::post('/listarCaracteristicas/{id}','HomeController@listarCaracteristicas')->name('listarCaracteristicas');
+
     Route::resource('publicaciones', 'PublicacionesController');
 
 });

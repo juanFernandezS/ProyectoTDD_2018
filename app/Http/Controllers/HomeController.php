@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Articulo;
 use Illuminate\Http\Request;
 use App\Publicacion;
 use App\User;
@@ -20,8 +21,9 @@ class HomeController extends Controller
     public function index()
     {
         $categorias = Categoria::orderBy('id','DESC')->get();
+        $articulos = Articulo::orderBy('id','asc')->get();
         $publicaciones = Publicacion::orderBy('id','DESC')->paginate(3);
-        return view('home',compact('publicaciones','categorias'));
+        return view('home',compact('publicaciones','categorias', 'articulos'));
     }
 
     public function publicaciones(){
@@ -36,5 +38,10 @@ class HomeController extends Controller
         $detalles = DetalleProducto::where('id_publicacion',$id);
         $detallesOpcionales = DetalleOpcional::where('id_publicacion',$id);
         return view('blog.detallePublicacion',compact('publicacion','detalles','detallesOpcionales','categorias'));
+    }
+
+    public function listarCaracteristicas($id){
+        $articulo = Articulo::find($id);
+        dd($articulo);
     }
 }

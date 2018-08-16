@@ -5,9 +5,9 @@
     <button class="btn-float crear" data-toggle="modal" data-target="#modal-create-public">
         <span class="fa fa-plus" style="font-size:24px"></span>
     </button>
-    <button class="btn-float misPublicaciones">
-        <span class="fa fa-newspaper-o" style="font-size:24px"></span>
-    </button>
+    <a class="btn-float misPublicaciones" title="Mis Publicaciones" role="button" href="{{ route('publicaciones.index') }}">
+        <span class="fa fa-newspaper-o" style="font-size:24px" ></span>
+    </a>
     <button class="btn-float chat">
         <span class="fa fa-commenting-o" style="font-size:24px"></span>
     </button>
@@ -30,8 +30,33 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Nombre Categoria</label>
-                        <input class="form-control" name="nombre" placeholder="Ingrese Nombre" type="text">
+                        <label>Titulo</label>
+                        <input class="form-control" name="titulo" placeholder="Ingrese Titulo"  type="text">
+                    </div>
+                    <div class="form-group">
+                        <select class="custom-select" id="articulos" name="id_articulo">
+                            <option selected="">Selecciona que articulo</option>
+                            @foreach($articulos as $articulo)
+                                <option value="{{ $articulo->id }}">{{ $articulo->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="custom-select" id="caracteristicas">
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio</label>
+                        <input class="form-control" name="precio" min="10" max="1200000" value="1" type="range">
+                    </div>
+                    <div class="form-group">
+                        <label>Cantidad</label>
+                        <input class="form-control" name="cantidad" min="1" max="100" value="1" type="range">
+                    </div>
+                    <div class="form-group">
+                        <label>Comentario</label>
+                        <input class="form-control" name="comentario" placeholder="Ingrese detallles sobre la publicación" type="text">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -42,3 +67,9 @@
         </div>
     </div>
 </div>
+
+
+<script>
+
+
+</script>
