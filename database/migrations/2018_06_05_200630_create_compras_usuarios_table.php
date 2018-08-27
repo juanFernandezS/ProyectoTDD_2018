@@ -12,7 +12,7 @@ class CreateComprasUsuariosTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {/*
         Schema::create('compras_usuarios', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_compra')->unsigned();
@@ -26,6 +26,7 @@ class CreateComprasUsuariosTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
+    */
     }
 
     /**

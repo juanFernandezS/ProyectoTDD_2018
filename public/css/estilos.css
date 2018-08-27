@@ -1,0 +1,47 @@
+
+body{
+    background: url("../img/textura/1.png");
+}
+
+.carousel-item img{
+
+    height: 500px;
+}
+
+.log{
+    height: 400px;
+}
+
+#footer {
+    position: relative;
+
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background-color: #58829A;
+    color: white;
+    text-align: center;
+}
+
+.categoria:hover{
+    text-decoration: underline;
+    background: darkgray;
+}
+.articulo:hover{
+    text-decoration: underline;
+    background: darkgray;
+}
+
+#nav-categorias{
+    /*position: fixed;*/
+    width: 90%;
+
+}
+
+.panel-chaat{
+    height: 150px;
+}
+
+.font-carousel{
+    color: black;
+}

@@ -15,18 +15,24 @@ class CreatePublicacionesTable extends Migration
     {
         Schema::create('publicaciones', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_articulo')->nullable();
             $table->string('titulo',100);
             $table->text('comentario');
-            $table->enum('estado',['publicada','eliminada'])->default('publicada');
+            $table->enum('estado',['publicada','eliminada','completada'])->default('publicada');
+
             $table->string('imagen',200)->nullable();
             $table->integer('precio');
-            $table->integer('cantidad')->unsigned();
+            $table->integer('cantidad')->unsigned()->nullable();
             $table->dateTime('fecha_publicacion');
 
             $table->integer('id_usuario')->unsigned();
 
 
             $table->timestamps();
+
+            $table->foreign('id_articulo')->references('id')->on('articulos')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->foreign('id_usuario')->references('id')->on('users')
             ->onDelete('cascade')

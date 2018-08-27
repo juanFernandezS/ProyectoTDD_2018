@@ -15,6 +15,6 @@ class Caracteristica extends Model
     }
 
     public function detalleProducto(){
-       return $this->hasMany('App\DetalleProducto');
+       return $this->hasMany('App\DetalleProducto','id_caracteristica');
     }
 }

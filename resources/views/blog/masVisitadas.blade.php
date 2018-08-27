@@ -13,6 +13,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$publicacion->titulo}}</h5>
                             <p class="card-text">{{$publicacion->comentario}}</p>
+
                             <a href="{{ route('detalle',$publicacion->id) }}" class="btn btn-sm btn-outline-primary"> Leer Más</a>
                         </div>
                     </div>

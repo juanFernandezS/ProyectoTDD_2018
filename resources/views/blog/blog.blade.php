@@ -1,6 +1,6 @@
 
 @section('content')
     @include('blog.ultimasPublicaciones')
-    @include('blog.masVisitadas')
+    <!--@include('blog.masVisitadas')-->
 
 @endsection

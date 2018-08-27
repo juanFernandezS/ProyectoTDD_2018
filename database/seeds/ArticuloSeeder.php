@@ -12,15 +12,34 @@ class ArticuloSeeder extends Seeder
     public function run()
     {
         DB::table('articulos')->insert([
-            'nombre' => 'Memoria Ram',
-            'id_categoria' => 1,
-
+            'nombre' => 'Memoria Notebook',
+            'id_categoria' => 5,
         ]);
 
         DB::table('articulos')->insert([
-            'nombre' => 'Disco Duro',
-            'id_categoria' => 2,
-
+            'nombre' => 'Disco Notebook',
+            'id_categoria' => 3,
         ]);
+        DB::table('articulos')->insert([
+            'nombre' => 'Disco SSD',
+            'id_categoria' => 3,
+        ]);
+        DB::table('articulos')->insert([
+            'nombre' => 'Mouse',
+            'id_categoria' => 2,
+        ]);
+        DB::table('articulos')->insert([
+            'nombre' => 'Teclado',
+            'id_categoria' => 2,
+        ]);
+        DB::table('articulos')->insert([
+            'nombre' => 'Pendrive',
+            'id_categoria' => 3,
+        ]);
+        DB::table('articulos')->insert([
+            'nombre' => 'Tarjetas Gráficas NVIDIA',
+            'id_categoria' => 1,
+        ]);
+
     }
 }

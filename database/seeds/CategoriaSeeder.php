@@ -12,25 +12,23 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         DB::table('categorias')->insert([
-            'nombre' => 'Memorias',
+            'nombre' => 'Componentes y Partes',
+        ]);
 
+        DB::table('categorias')->insert([
+            'nombre' => 'Mouses y Teclados',
         ]);
 
         DB::table('categorias')->insert([
             'nombre' => 'Almacenamiento',
-
         ]);
-        DB::table('categorias')->insert([
-            'nombre' => 'Monitores',
 
+        DB::table('categorias')->insert([
+            'nombre' => 'Placas Madres',
         ]);
-        DB::table('categorias')->insert([
-            'nombre' => 'Impresoras',
 
-        ]);
         DB::table('categorias')->insert([
-            'nombre' => 'Robotica',
-
+            'nombre' => 'Memorias',
         ]);
     }
 }

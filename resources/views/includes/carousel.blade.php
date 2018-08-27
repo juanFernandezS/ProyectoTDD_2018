@@ -6,24 +6,24 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block img-fluid" src="{{ asset('img/img_1.jpg') }}" alt="First slide">
+            <img class="d-block w-100" src="{{ asset('img/carousel/img_4.jpg') }}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Simple y donde quieras</h5>
-                <p> Nueva pagina de venta! especializada en articulos electronicos y computacionales.</p>
+                <h4 class="text-primary text-">Simple y donde quieras</h4>
+                <p class="font-carousel"> Nueva pagina de venta! especializada en articulos electronicos y computacionales.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block img-fluid" src="{{ asset('img/img_1.jpg') }}" alt="Second slide">
+            <img class="d-block w-100" src="{{ asset('img/carousel/img_2.jpg') }}" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Un servicio 24/7</h5>
-                <p>Todo lo que buscas lo encuentras aquí.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img class="d-block img-fluid" src="{{ asset('img/img_1.jpg') }}" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Todo en un solo lugar</h5>
+                <h4 class="text-primary">Todo en un solo lugar</h4>
                 <p>....</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{{ asset('img/carousel/img_3.jpg') }}" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-primary">Un servicio 24/7</h4>
+                <p class="font-carousel">Todo lo que buscas lo encuentras aquí.</p>
             </div>
         </div>
     </div>
